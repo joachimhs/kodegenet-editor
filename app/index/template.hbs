@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-sm-6 col-md-6">
+      {{#if showHtml}}
+          <div id="htmlEditor" class="editor">
+              <label>HTML</label>
+            {{ivy-codemirror
+            value=htmlValue
+            options=(hash lineNumbers=true mode="html")
+            valueUpdated=(action (mut htmlValue))
+            class="input-code"}}
+          </div>
+      {{/if}}
+
+      {{#if showCss}}
+          <div id="cssEditor" class="editor">
+              <label>CSS</label>
+            {{ivy-codemirror
+            value=cssValue
+            options=(hash lineNumbers=true mode="css")
+            valueUpdated=(action (mut cssValue))
+            class="input-code"}}
+          </div>
+      {{/if}}
+
+      {{#if showJs}}
+          <div id="jsEditor" class="editor">
+              <label>JavaScript</label>
+            {{ivy-codemirror
+            value=jsValue
+            options=(hash lineNumbers=true mode="javascript")
+            valueUpdated=(action (mut jsValue))
+            class="input-code"}}
+          </div>
+      {{/if}}
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <label class="output-resultat">Resultat</label>
+        <iframe id="output">
+        </iframe>
+        <label class="console-resultat">Meldinger</label>
+        <textarea id="console"></textarea>
+    </div>
+</div>
+{{outlet}}

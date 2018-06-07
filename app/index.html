@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KodegenetEditor</title>
+    <title>Kodegenet Editor</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,6 +11,16 @@
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/kodegenet-editor.css">
+
+    <script>
+      window.alert_message = function(code, value) {
+        $("#console").append('Feilmelding: ' + code + ' :: ' + value + '\n');
+      };
+
+      window.console_message = function(log) {
+        $("#console").append('LOG: ' + log + '\n');
+      };
+    </script>
 
     {{content-for "head-footer"}}
   </head>

@@ -1,0 +1,57 @@
+<div class="header-container">
+    <img src="/images/kodegenet-editor.jpg" {{action "doHome"}}>
+    <div class="btn-group btn-group-sm" role="group">
+        <button type="button" class="btn {{if showHtml "btn-primary" "btn-default"}}" {{action "toggleEditor" "showHtml"}}>HTML</button>
+        <button type="button" class="btn {{if showCss "btn-primary" "btn-default"}}" {{action "toggleEditor" "showCss"}}>CSS</button>
+        <button type="button" class="btn {{if showJs "btn-primary" "btn-default"}}" {{action "toggleEditor" "showJs"}}>JavaScript</button>
+    </div>
+    <div class="button-row">
+        <button class="btn btn-sm btn-primary" {{action "runCode"}}>{{fa-icon "caret-right"}} Kjør Kode!</button>
+    </div>
+  {{input type="checkbox" checked=includejQuery}} Inkluder jQuery
+  {{input type="checkbox" checked=includeEaselJs}} Inkluder EaselJS
+    <div class="menu-button" {{action "toggleHamburger"}}>
+      {{fa-icon "cog" spin=showingHamburger size=2}}
+    </div>
+</div>
+<div id="headerHamburger" class="header-hamburger">
+    <div class="header-container">
+        <div class="center-container">
+            {{#if liveEmbed}}
+                <a href="{{newWindowUrl}}" target="_blank" class="menu-item">
+                  {{fa-icon "home" size=2 border=true}}
+                    <div>Åpne Kodebiten i et eget vindu</div>
+                </a>
+                <a href="https://editor.kodegenet.no/howto" target="_blank"class="menu-item">
+                  {{fa-icon "info" size=2 border=true}}
+                    <div>Om Kodegenets Editor</div>
+                </a>
+                <a href="https://editor.kodegenet.no/info" target="_blank" class="menu-item">
+                  {{fa-icon "question" size=2 border=true}}
+                    <div>Hvordan fungerer Kode editoren?</div>
+                </a>
+            {{else}}
+                <div class="menu-item" {{action "doHome"}}>
+                  {{fa-icon "home" size=2 border=true}}
+                    <div>Forsiden</div>
+                </div>
+                <div class="menu-item" {{action "doLogIn"}}>
+                  {{fa-icon "sign-in" size=2 border=true}}
+                    <div>Logg inn</div>
+                </div>
+                <div class="menu-item" {{action "doRegister"}}>
+                  {{fa-icon "user-plus" size=2 border=true}}
+                    <div>Lag ny konto</div>
+                </div>
+                <div class="menu-item"  {{action "doHowto"}}>
+                  {{fa-icon "question" size=2 border=true}}
+                    <div>Hvordan fungerer Kode editoren?</div>
+                </div>
+                <div class="menu-item"  {{action "doInfo"}}>
+                  {{fa-icon "info" size=2 border=true}}
+                    <div>Om Kodegenets Editor</div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
